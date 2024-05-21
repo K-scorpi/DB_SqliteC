@@ -1,0 +1,32 @@
+//---------------------------------------------------------------------------
+
+#ifndef mainH
+#define mainH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include "VirtualTrees.AncestorVCL.hpp"
+#include "VirtualTrees.BaseAncestorVCL.hpp"
+#include "VirtualTrees.BaseTree.hpp"
+#include "VirtualTrees.hpp"
+#include <Vcl.Dialogs.hpp>
+#include "sqlite3.h"
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+__published:	// IDE-managed Components
+	TVirtualStringTree *our_tree;
+	TOpenDialog *file_open;
+	TButton *open_file_button;
+	void __fastcall open_file_buttonClick(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+	__fastcall TForm1(TComponent* Owner);
+	sqlite3 *db;
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif
